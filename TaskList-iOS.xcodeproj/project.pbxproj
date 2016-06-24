@@ -9,12 +9,12 @@
 /* Begin PBXBuildFile section */
 		55265219812128DDA9062038 /* Pods_TaskList_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0144A3BA5943C2E4C923C136 /* Pods_TaskList_iOSTests.framework */; };
 		C8E2DBA11D1D76C00003384D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DBA01D1D76C00003384D /* AppDelegate.swift */; };
-		C8E2DBA31D1D76C00003384D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DBA21D1D76C00003384D /* ViewController.swift */; };
 		C8E2DBA61D1D76C00003384D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8E2DBA41D1D76C00003384D /* Main.storyboard */; };
 		C8E2DBA81D1D76C00003384D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8E2DBA71D1D76C00003384D /* Assets.xcassets */; };
 		C8E2DBAB1D1D76C00003384D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8E2DBA91D1D76C00003384D /* LaunchScreen.storyboard */; };
 		C8E2DBB61D1D76C00003384D /* TaskList_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DBB51D1D76C00003384D /* TaskList_iOSTests.swift */; };
 		C8E2DBC11D1D76C00003384D /* TaskList_iOSUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DBC01D1D76C00003384D /* TaskList_iOSUITests.swift */; };
+		C8E2DBD01D1D882B0003384D /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DBCF1D1D882B0003384D /* TaskListViewController.swift */; };
 		D2C1C52299DF852A085BC5FC /* Pods_TaskList_iOSUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DE3ADB1F1BB301DA28F58E8F /* Pods_TaskList_iOSUITests.framework */; };
 		D5B7901715F41F2BE2F2E16C /* Pods_TaskList_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80E5B0E1FD684574D225914 /* Pods_TaskList_iOS.framework */; };
 /* End PBXBuildFile section */
@@ -46,7 +46,6 @@
 		BD340A2385952631954FFD62 /* Pods-TaskList-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskList-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaskList-iOS/Pods-TaskList-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		C8E2DB9D1D1D76C00003384D /* TaskList-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaskList-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E2DBA01D1D76C00003384D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
-		C8E2DBA21D1D76C00003384D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C8E2DBA51D1D76C00003384D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8E2DBA71D1D76C00003384D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8E2DBAA1D1D76C00003384D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,6 +56,7 @@
 		C8E2DBBC1D1D76C00003384D /* TaskList-iOSUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TaskList-iOSUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E2DBC01D1D76C00003384D /* TaskList_iOSUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList_iOSUITests.swift; sourceTree = "<group>"; };
 		C8E2DBC21D1D76C00003384D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C8E2DBCF1D1D882B0003384D /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
 		DE3ADB1F1BB301DA28F58E8F /* Pods_TaskList_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskList_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80E5B0E1FD684574D225914 /* Pods_TaskList_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskList_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -155,7 +155,7 @@
 		C8E2DBCE1D1D78520003384D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C8E2DBA21D1D76C00003384D /* ViewController.swift */,
+				C8E2DBCF1D1D882B0003384D /* TaskListViewController.swift */,
 			);
 			name = Views;
 			path = Classes;
@@ -436,8 +436,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C8E2DBA31D1D76C00003384D /* ViewController.swift in Sources */,
 				C8E2DBA11D1D76C00003384D /* AppDelegate.swift in Sources */,
+				C8E2DBD01D1D882B0003384D /* TaskListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
