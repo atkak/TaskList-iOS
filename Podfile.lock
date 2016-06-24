@@ -1,0 +1,12 @@
+PODS:
+  - RMSwipeTableViewCell (0.6)
+
+DEPENDENCIES:
+  - RMSwipeTableViewCell
+
+SPEC CHECKSUMS:
+  RMSwipeTableViewCell: ef3a5fc804cf0d5fb70fe1195c088cc40b3fde3c
+
+PODFILE CHECKSUM: b281d34bc433213538b9f202cfa306d83692233c
+
+COCOAPODS: 1.0.1
