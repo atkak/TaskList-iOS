@@ -45,7 +45,7 @@
 		BC268660FC913EFD85390F23 /* Pods-TaskList-iOSUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskList-iOSUITests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaskList-iOSUITests/Pods-TaskList-iOSUITests.release.xcconfig"; sourceTree = "<group>"; };
 		BD340A2385952631954FFD62 /* Pods-TaskList-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskList-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaskList-iOS/Pods-TaskList-iOS.release.xcconfig"; sourceTree = "<group>"; };
 		C8E2DB9D1D1D76C00003384D /* TaskList-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaskList-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8E2DBA01D1D76C00003384D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		C8E2DBA01D1D76C00003384D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
 		C8E2DBA21D1D76C00003384D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		C8E2DBA51D1D76C00003384D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8E2DBA71D1D76C00003384D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -124,8 +124,8 @@
 		C8E2DB9F1D1D76C00003384D /* TaskList-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				C8E2DBCE1D1D78520003384D /* Views */,
 				C8E2DBA01D1D76C00003384D /* AppDelegate.swift */,
-				C8E2DBA21D1D76C00003384D /* ViewController.swift */,
 				C8E2DBA41D1D76C00003384D /* Main.storyboard */,
 				C8E2DBA71D1D76C00003384D /* Assets.xcassets */,
 				C8E2DBA91D1D76C00003384D /* LaunchScreen.storyboard */,
@@ -150,6 +150,15 @@
 				C8E2DBC21D1D76C00003384D /* Info.plist */,
 			);
 			path = "TaskList-iOSUITests";
+			sourceTree = "<group>";
+		};
+		C8E2DBCE1D1D78520003384D /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				C8E2DBA21D1D76C00003384D /* ViewController.swift */,
+			);
+			name = Views;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		F380B07E2CBC75ED3B7A75BD /* Pods */ = {
