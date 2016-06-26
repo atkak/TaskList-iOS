@@ -3,16 +3,15 @@ platform :ios, '9.0'
 target 'TaskList-iOS' do
   use_frameworks!
 
-  pod 'RMSwipeTableViewCell'
+  pod "Himotoki", "~> 2.1"
+  pod 'BrightFutures'
+  pod 'Alamofire'
 
   target 'TaskList-iOSTests' do
     inherit! :search_paths
-    # Pods for testing
-  end
-
-  target 'TaskList-iOSUITests' do
-    inherit! :search_paths
-    # Pods for testing
+    pod 'Quick'
+    pod 'Nimble'
+    pod 'Mockingjay'
   end
 
 end
