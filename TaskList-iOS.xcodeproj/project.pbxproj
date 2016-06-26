@@ -12,21 +12,17 @@
 		C8E2DBA61D1D76C00003384D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8E2DBA41D1D76C00003384D /* Main.storyboard */; };
 		C8E2DBA81D1D76C00003384D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8E2DBA71D1D76C00003384D /* Assets.xcassets */; };
 		C8E2DBAB1D1D76C00003384D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8E2DBA91D1D76C00003384D /* LaunchScreen.storyboard */; };
-		C8E2DBB61D1D76C00003384D /* TaskList_iOSTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DBB51D1D76C00003384D /* TaskList_iOSTests.swift */; };
 		C8E2DBD01D1D882B0003384D /* TaskListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DBCF1D1D882B0003384D /* TaskListViewController.swift */; };
+		C8E2DBD31D1D89470003384D /* FetchTaskListService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DBD21D1D89470003384D /* FetchTaskListService.swift */; };
+		C8E2DBD61D1D89C50003384D /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DBD51D1D89C50003384D /* Task.swift */; };
+		C8E2DBD91D1D937A0003384D /* FetchTaskListAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DBD81D1D937A0003384D /* FetchTaskListAPIClient.swift */; };
 		C8E2DBDC1D1E52F00003384D /* FetchTaskListSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DBDB1D1E52F00003384D /* FetchTaskListSpec.swift */; };
+		C8E2DBDF1D1E743D0003384D /* FetchTaskListAPIClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DBDE1D1E743D0003384D /* FetchTaskListAPIClientSpec.swift */; };
 		D5B7901715F41F2BE2F2E16C /* Pods_TaskList_iOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F80E5B0E1FD684574D225914 /* Pods_TaskList_iOS.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
 		C8E2DBB21D1D76C00003384D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = C8E2DB951D1D76C00003384D /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = C8E2DB9C1D1D76C00003384D;
-			remoteInfo = "TaskList-iOS";
-		};
-		C8E2DBBD1D1D76C00003384D /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = C8E2DB951D1D76C00003384D /* Project object */;
 			proxyType = 1;
@@ -48,10 +44,13 @@
 		C8E2DBAA1D1D76C00003384D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8E2DBAC1D1D76C00003384D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8E2DBB11D1D76C00003384D /* TaskList-iOSTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "TaskList-iOSTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
-		C8E2DBB51D1D76C00003384D /* TaskList_iOSTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskList_iOSTests.swift; sourceTree = "<group>"; };
 		C8E2DBB71D1D76C00003384D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		C8E2DBC21D1D76C00003384D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C8E2DBCF1D1D882B0003384D /* TaskListViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TaskListViewController.swift; sourceTree = "<group>"; };
+		C8E2DBD21D1D89470003384D /* FetchTaskListService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FetchTaskListService.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		C8E2DBD51D1D89C50003384D /* Task.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
+		C8E2DBD81D1D937A0003384D /* FetchTaskListAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FetchTaskListAPIClient.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		C8E2DBDB1D1E52F00003384D /* FetchTaskListSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FetchTaskListSpec.swift; sourceTree = "<group>"; };
+		C8E2DBDE1D1E743D0003384D /* FetchTaskListAPIClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = FetchTaskListAPIClientSpec.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		DE3ADB1F1BB301DA28F58E8F /* Pods_TaskList_iOSUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskList_iOSUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		F80E5B0E1FD684574D225914 /* Pods_TaskList_iOS.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskList_iOS.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
@@ -109,6 +108,9 @@
 		C8E2DB9F1D1D76C00003384D /* TaskList-iOS */ = {
 			isa = PBXGroup;
 			children = (
+				C8E2DBD71D1D931D0003384D /* Infrastructures */,
+				C8E2DBD41D1D89AC0003384D /* Domains */,
+				C8E2DBD11D1D88FE0003384D /* Services */,
 				C8E2DBCE1D1D78520003384D /* Views */,
 				C8E2DBA01D1D76C00003384D /* AppDelegate.swift */,
 				C8E2DBA41D1D76C00003384D /* Main.storyboard */,
@@ -122,14 +124,11 @@
 		C8E2DBB41D1D76C00003384D /* TaskList-iOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				C8E2DBDD1D1E74210003384D /* Infrastructures */,
+				C8E2DBDA1D1E51C50003384D /* UseCases */,
 				C8E2DBB71D1D76C00003384D /* Info.plist */,
 			);
 			path = "TaskList-iOSTests";
-			sourceTree = "<group>";
-		};
-			isa = PBXGroup;
-			children = (
-			);
 			sourceTree = "<group>";
 		};
 		C8E2DBCE1D1D78520003384D /* Views */ = {
@@ -138,6 +137,51 @@
 				C8E2DBCF1D1D882B0003384D /* TaskListViewController.swift */,
 			);
 			name = Views;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C8E2DBD11D1D88FE0003384D /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				C8E2DBD21D1D89470003384D /* FetchTaskListService.swift */,
+			);
+			name = Services;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C8E2DBD41D1D89AC0003384D /* Domains */ = {
+			isa = PBXGroup;
+			children = (
+				C8E2DBD51D1D89C50003384D /* Task.swift */,
+			);
+			name = Domains;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C8E2DBD71D1D931D0003384D /* Infrastructures */ = {
+			isa = PBXGroup;
+			children = (
+				C8E2DBD81D1D937A0003384D /* FetchTaskListAPIClient.swift */,
+			);
+			name = Infrastructures;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C8E2DBDA1D1E51C50003384D /* UseCases */ = {
+			isa = PBXGroup;
+			children = (
+				C8E2DBDB1D1E52F00003384D /* FetchTaskListSpec.swift */,
+			);
+			name = UseCases;
+			path = Classes;
+			sourceTree = "<group>";
+		};
+		C8E2DBDD1D1E74210003384D /* Infrastructures */ = {
+			isa = PBXGroup;
+			children = (
+				C8E2DBDE1D1E743D0003384D /* FetchTaskListAPIClientSpec.swift */,
+			);
+			name = Infrastructures;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -252,31 +296,9 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C8E2DBBA1D1D76C00003384D /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		157B0443A48D6159C17D3D80 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
 		6CE9709C66033D6ECB094581 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -374,7 +396,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8E2DBD91D1D937A0003384D /* FetchTaskListAPIClient.swift in Sources */,
+				C8E2DBD61D1D89C50003384D /* Task.swift in Sources */,
 				C8E2DBA11D1D76C00003384D /* AppDelegate.swift in Sources */,
+				C8E2DBD31D1D89470003384D /* FetchTaskListService.swift in Sources */,
 				C8E2DBD01D1D882B0003384D /* TaskListViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -383,6 +408,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8E2DBDF1D1E743D0003384D /* FetchTaskListAPIClientSpec.swift in Sources */,
+				C8E2DBDC1D1E52F00003384D /* FetchTaskListSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
