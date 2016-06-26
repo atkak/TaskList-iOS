@@ -16,7 +16,7 @@ class FetchTaskListAPIClient {
     func findAll() -> Future<[Task], APIClientError> {
         let promise = Promise<[Task], APIClientError>()
         
-        Alamofire.request(.GET, "https://localhost:9000/tasks")
+        Alamofire.request(.GET, "http://localhost:9000/tasks")
             .responseJSON { response in
                 switch response.result {
                 case .Success(let jsonObj):
