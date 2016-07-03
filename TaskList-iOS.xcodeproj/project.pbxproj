@@ -89,6 +89,38 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		C8C510CF1D2947BB00533EEC /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				C8E2DBCF1D1D882B0003384D /* TaskListViewController.swift */,
+			);
+			name = Task;
+			sourceTree = "<group>";
+		};
+		C8C510D01D2947C400533EEC /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				C8E2DBD21D1D89470003384D /* FetchTaskListService.swift */,
+			);
+			name = Task;
+			sourceTree = "<group>";
+		};
+		C8C510D11D2947CB00533EEC /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				C8E2DBD51D1D89C50003384D /* Task.swift */,
+			);
+			name = Task;
+			sourceTree = "<group>";
+		};
+		C8C510D21D2947D100533EEC /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				C8E2DBD81D1D937A0003384D /* FetchTaskListAPIClient.swift */,
+			);
+			name = Task;
+			sourceTree = "<group>";
+		};
 		C8E2DB941D1D76C00003384D = {
 			isa = PBXGroup;
 			children = (
@@ -138,7 +170,7 @@
 		C8E2DBCE1D1D78520003384D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C8E2DBCF1D1D882B0003384D /* TaskListViewController.swift */,
+				C8C510CF1D2947BB00533EEC /* Task */,
 			);
 			name = Views;
 			path = Classes;
@@ -147,7 +179,7 @@
 		C8E2DBD11D1D88FE0003384D /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				C8E2DBD21D1D89470003384D /* FetchTaskListService.swift */,
+				C8C510D01D2947C400533EEC /* Task */,
 			);
 			name = Services;
 			path = Classes;
@@ -156,7 +188,7 @@
 		C8E2DBD41D1D89AC0003384D /* Domains */ = {
 			isa = PBXGroup;
 			children = (
-				C8E2DBD51D1D89C50003384D /* Task.swift */,
+				C8C510D11D2947CB00533EEC /* Task */,
 			);
 			name = Domains;
 			path = Classes;
@@ -165,7 +197,7 @@
 		C8E2DBD71D1D931D0003384D /* Infrastructures */ = {
 			isa = PBXGroup;
 			children = (
-				C8E2DBD81D1D937A0003384D /* FetchTaskListAPIClient.swift */,
+				C8C510D21D2947D100533EEC /* Task */,
 				C8C510CD1D293FFA00533EEC /* AppConfiguration.swift */,
 			);
 			name = Infrastructures;
