@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2jy-Bf-cDP">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="2jy-Bf-cDP">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -28,12 +28,37 @@
                             <outlet property="delegate" destination="XWH-ys-vxc" id="Ynr-OP-TUf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="xKH-qk-8yj"/>
+                    <navigationItem key="navigationItem" title="Root View Controller" id="xKH-qk-8yj">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gu9-DK-3M6">
+                            <connections>
+                                <segue destination="m14-b0-8xe" kind="show" id="er3-J3-TyO"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fki-Fd-X6A" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="639" y="603"/>
+        </scene>
+        <!--Task Detail View Controller-->
+        <scene sceneID="afP-Me-1lm">
+            <objects>
+                <viewController id="m14-b0-8xe" customClass="TaskDetailViewController" customModule="TaskList_iOS" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="CD7-Nl-zro"/>
+                        <viewControllerLayoutGuide type="bottom" id="2yY-YB-dUm"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="VbO-No-8KC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8Eh-Ix-lKG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1167.5" y="602.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="NmY-hO-6Pa">
