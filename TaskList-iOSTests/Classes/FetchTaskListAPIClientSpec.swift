@@ -24,9 +24,9 @@ class FetchTaskListAPIClientSpec: QuickSpec {
             
                 let apiClient = FetchTaskListAPIClient()
                 let body = [
-                    ["title": "title1", "description": "description1", "dueDate": "2016-06-25T15:00:00"],
-                    ["title": "title2", "description": "description2", "dueDate": "2016-06-25T15:00:01"],
-                    ["title": "title3", "description": "description3", "dueDate": "2016-06-25T15:00:02"],
+                    ["id": "id1", "title": "title1", "description": "description1", "dueDate": "2016-06-25T15:00:00"],
+                    ["id": "id2", "title": "title2", "description": "description2", "dueDate": "2016-06-25T15:00:01"],
+                    ["id": "id3", "title": "title3", "description": "description3", "dueDate": "2016-06-25T15:00:02"],
                     ]
                 
                 beforeEach {
@@ -41,6 +41,7 @@ class FetchTaskListAPIClientSpec: QuickSpec {
                     let tasks = f.result?.value
                     
                     expect(tasks).toEventually(haveCount(3))
+                    expect(tasks?[0].id).toEventually(equal("id1"))
                     expect(tasks?[0].title).toEventually(equal("title1"))
                     expect(tasks?[0].description).toEventually(equal("description1"))
                     
