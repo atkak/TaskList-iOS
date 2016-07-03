@@ -28,7 +28,7 @@ class FetchTaskListSpec: QuickSpec {
                     ["title": "title2", "description": "description2", "dueDate": "2016-06-25T15:00:01"],
                     ["title": "title3", "description": "description3", "dueDate": "2016-06-25T15:00:02"],
                 ]
-                self.stub(http(.GET, uri: "https://localhost:9000/tasks"), builder: json(body))
+                self.stub(http(.GET, uri: "/tasks"), builder: json(body))
             }
             
             it("should return expected task list") {

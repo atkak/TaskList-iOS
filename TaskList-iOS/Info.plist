@@ -39,5 +39,7 @@
 		<key>NSAllowsArbitraryLoads</key>
 		<true/>
 	</dict>
+	<key>WebAPI Base URL</key>
+	<string>$(WEBAPI_BASE_URL)</string>
 </dict>
 </plist>

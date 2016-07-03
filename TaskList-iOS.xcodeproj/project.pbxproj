@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		55265219812128DDA9062038 /* Pods_TaskList_iOSTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0144A3BA5943C2E4C923C136 /* Pods_TaskList_iOSTests.framework */; };
+		C8C510CE1D293FFA00533EEC /* AppConfiguration.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C510CD1D293FFA00533EEC /* AppConfiguration.swift */; };
 		C8E2DBA11D1D76C00003384D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DBA01D1D76C00003384D /* AppDelegate.swift */; };
 		C8E2DBA61D1D76C00003384D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8E2DBA41D1D76C00003384D /* Main.storyboard */; };
 		C8E2DBA81D1D76C00003384D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8E2DBA71D1D76C00003384D /* Assets.xcassets */; };
@@ -33,11 +34,13 @@
 
 /* Begin PBXFileReference section */
 		0144A3BA5943C2E4C923C136 /* Pods_TaskList_iOSTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_TaskList_iOSTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5C36B1E4BA5B0583ACDBD28B /* Pods-TaskList-iOSTests.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskList-iOSTests.dev.xcconfig"; path = "Pods/Target Support Files/Pods-TaskList-iOSTests/Pods-TaskList-iOSTests.dev.xcconfig"; sourceTree = "<group>"; };
 		5CEEB2E64171C4C17EEDF1B8 /* Pods-TaskList-iOS.dev.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskList-iOS.dev.xcconfig"; path = "Pods/Target Support Files/Pods-TaskList-iOS/Pods-TaskList-iOS.dev.xcconfig"; sourceTree = "<group>"; };
 		65A27265AD821C906B7FF653 /* Pods-TaskList-iOS.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskList-iOS.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaskList-iOS/Pods-TaskList-iOS.debug.xcconfig"; sourceTree = "<group>"; };
 		6CA6BCDC8A08195A440C33DD /* Pods-TaskList-iOSTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskList-iOSTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-TaskList-iOSTests/Pods-TaskList-iOSTests.debug.xcconfig"; sourceTree = "<group>"; };
 		9C03C79D38337AC3A08D736C /* Pods-TaskList-iOSTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskList-iOSTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaskList-iOSTests/Pods-TaskList-iOSTests.release.xcconfig"; sourceTree = "<group>"; };
 		BD340A2385952631954FFD62 /* Pods-TaskList-iOS.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-TaskList-iOS.release.xcconfig"; path = "Pods/Target Support Files/Pods-TaskList-iOS/Pods-TaskList-iOS.release.xcconfig"; sourceTree = "<group>"; };
+		C8C510CD1D293FFA00533EEC /* AppConfiguration.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppConfiguration.swift; sourceTree = "<group>"; };
 		C8E2DB9D1D1D76C00003384D /* TaskList-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaskList-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E2DBA01D1D76C00003384D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
 		C8E2DBA51D1D76C00003384D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -163,6 +166,7 @@
 			isa = PBXGroup;
 			children = (
 				C8E2DBD81D1D937A0003384D /* FetchTaskListAPIClient.swift */,
+				C8C510CD1D293FFA00533EEC /* AppConfiguration.swift */,
 			);
 			name = Infrastructures;
 			path = Classes;
@@ -399,6 +403,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C8C510CE1D293FFA00533EEC /* AppConfiguration.swift in Sources */,
 				C8E2DBD91D1D937A0003384D /* FetchTaskListAPIClient.swift in Sources */,
 				C8E2DBD61D1D89C50003384D /* Task.swift in Sources */,
 				C8E2DBA11D1D76C00003384D /* AppDelegate.swift in Sources */,
@@ -609,6 +614,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.xiongmaomaomao.TaskList-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WEBAPI_BASE_URL = "http://localhost:9000";
 			};
 			name = Debug;
 		};
@@ -621,6 +627,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "io.github.xiongmaomaomao.TaskList-iOS";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				WEBAPI_BASE_URL = "";
 			};
 			name = Release;
 		};

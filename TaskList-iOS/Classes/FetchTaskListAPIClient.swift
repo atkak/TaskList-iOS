@@ -14,9 +14,10 @@ import Himotoki
 class FetchTaskListAPIClient {
     
     func findAll() -> Future<[Task], APIClientError> {
+        let baseURL = AppConfiguration.webAPIBaseURL
         let promise = Promise<[Task], APIClientError>()
         
-        Alamofire.request(.GET, "http://localhost:9000/tasks")
+        Alamofire.request(.GET, "\(baseURL)/tasks")
             .responseJSON { response in
                 switch response.result {
                 case .Success(let jsonObj):
