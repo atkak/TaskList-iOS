@@ -6,6 +6,8 @@ target 'TaskList-iOS' do
   pod "Himotoki", "~> 2.1"
   pod 'BrightFutures'
   pod 'Alamofire'
+  pod 'Eureka', '~> 1.6'
+  pod "PKHUD"
 
   target 'TaskList-iOSTests' do
     inherit! :search_paths
