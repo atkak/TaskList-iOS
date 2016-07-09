@@ -57,7 +57,7 @@ class TaskDetailViewController: FormViewController {
             return nil
         }
         
-        let description = values["title"] as? String
+        let description = values["description"] as? String
         
         guard let dueDate = values["dueDate"] as? NSDate else {
             return nil
@@ -83,7 +83,10 @@ class TaskDetailViewController: FormViewController {
                 self.navigationController?.popViewControllerAnimated(true)
             }
             .onFailure(Queue.main.context) { error in
-                
+                HUD.hide(animated: false)
+                let alert = UIAlertController(title: nil, message: error.message, preferredStyle: .Alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+                self.presentViewController(alert, animated: true, completion: nil)
             }
     }
     

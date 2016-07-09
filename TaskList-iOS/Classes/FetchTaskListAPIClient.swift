@@ -47,23 +47,11 @@ class FetchTaskListAPIClient {
     
 }
 
-enum APIClientError: ErrorType {
-    case RequestFailed(e: ErrorType)
-    case InvalidResponse(e: ErrorType, body: AnyObject)
-    case ErrorResponse(statusCode: Int, message: String?)
-}
-
 extension Task: Decodable {
-    
-    private static let dateFormatter: NSDateFormatter = {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "yyyy'-'MM'-'dd'T'HH':'mm':'ss"
-        return dateFormatter
-    }()
     
     static func decode(e: Extractor) throws -> Task {
         let DateTransformer = Transformer<String, NSDate> { dateString throws -> NSDate in
-            if let date = dateFormatter.dateFromString(dateString) {
+            if let date = DateFormatter.dueDateFormatter.dateFromString(dateString) {
                 return date
             }
             

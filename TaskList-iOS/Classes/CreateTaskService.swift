@@ -11,19 +11,10 @@ import BrightFutures
 
 class CreateTaskService {
     
-    func create(task: CreateTask) -> Future<Void, Error> {
-        // TODO: implement
-        let p = Promise<Void, Error>()
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, Int64(1.0 * Double(NSEC_PER_SEC))), dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_DEFAULT, 0)) {
-            p.success()
-        }
-        
-        return p.future
-    }
+    private let createTaskAPIClient = CreateTaskAPIClient()
     
-    enum Error: ErrorType {
-        case ServerError
+    func create(task: CreateTask) -> Future<Void, ApplicationError> {
+        return createTaskAPIClient.create(task).asVoid().mapError { $0.translateToApplicationError() }
     }
     
 }
