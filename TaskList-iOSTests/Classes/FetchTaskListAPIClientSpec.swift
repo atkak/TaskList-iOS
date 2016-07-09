@@ -53,6 +53,36 @@ class FetchTaskListAPIClientSpec: QuickSpec {
                 
             }
             
+            context("when description field does not exist") {
+            
+                let apiClient = FetchTaskListAPIClient()
+                let body = [
+                    ["id": "id1", "title": "title1", "dueDate": "2016-06-25T15:00:00"],
+                    ]
+                
+                beforeEach {
+                    self.stub(http(.GET, uri: "/tasks"), builder: json(body))
+                }
+                
+                it("should return successful result") {
+                    let f = apiClient.findAll()
+                    
+                    expect(f.isSuccess).toEventually(beTrue())
+                    
+                    let tasks = f.result?.value
+                    
+                    expect(tasks?[0].id).toEventually(equal("id1"))
+                    expect(tasks?[0].title).toEventually(equal("title1"))
+                    expect(tasks?[0].description).toEventually(beNil())
+                    
+                    let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
+                    let date = calendar.dateWithEra(1, year: 2016, month: 6, day: 25, hour: 15, minute: 0, second: 0, nanosecond: 0)
+                    
+                    expect(tasks?[0].dueDate).toEventually(equal(date))
+                }
+                
+            }
+            
             context("when not connected to internet") {
             
                 let apiClient = FetchTaskListAPIClient()
