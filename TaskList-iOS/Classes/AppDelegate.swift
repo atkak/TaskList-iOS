@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  TaskList-iOS
-//
-//  Created by KAKEGAWA Atsushi on 2016/06/24.
-//  Copyright © 2016年 KAKEGAWA Atsushi. All rights reserved.
-//
-
 import UIKit
 
 @UIApplicationMain
@@ -41,6 +33,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
-
 }
-

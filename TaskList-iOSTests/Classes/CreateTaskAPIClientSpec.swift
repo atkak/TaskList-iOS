@@ -1,11 +1,3 @@
-//
-//  CreateTaskAPIClientSpec.swift
-//  TaskList-iOS
-//
-//  Created by KAKEGAWA Atsushi on 2016/07/05.
-//  Copyright © 2016年 KAKEGAWA Atsushi. All rights reserved.
-//
-
 import XCTest
 @testable import TaskList_iOS
 import Quick
