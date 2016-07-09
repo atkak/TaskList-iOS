@@ -80,7 +80,7 @@ class TaskDetailViewController: FormViewController {
         self.createTaskService.create(task)
             .onSuccess(Queue.main.context) {
                 HUD.flash(.Success, delay: 1.0)
-                self.navigationController?.popViewControllerAnimated(true)
+                self.performSegueWithIdentifier("UnwindFromDetailToList", sender: self)
             }
             .onFailure(Queue.main.context) { error in
                 HUD.hide(animated: false)

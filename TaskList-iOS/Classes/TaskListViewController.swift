@@ -36,6 +36,10 @@ class TaskListViewController: UITableViewController {
         return cell
     }
     
+    @IBAction func unwindFromDetailViewFor(segue: UIStoryboardSegue) {
+        loadTasks()
+    }
+    
     private func loadTasks() {
         let future = fetchTaskListService.findAll()
         future
