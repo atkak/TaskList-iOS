@@ -143,6 +143,24 @@
 			name = Task;
 			sourceTree = "<group>";
 		};
+		C8C510E91D31379D00533EEC /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				C8E2DBDE1D1E743D0003384D /* FetchTaskListAPIClientSpec.swift */,
+				C8C510E11D2BFF0E00533EEC /* CreateTaskAPIClientSpec.swift */,
+			);
+			name = Task;
+			sourceTree = "<group>";
+		};
+		C8C510EA1D3137A400533EEC /* Task */ = {
+			isa = PBXGroup;
+			children = (
+				C8E2DBDB1D1E52F00003384D /* FetchTaskListSpec.swift */,
+				C8C510E31D30C01900533EEC /* CreateTaskSpec.swift */,
+			);
+			name = Task;
+			sourceTree = "<group>";
+		};
 		C8E2DB941D1D76C00003384D = {
 			isa = PBXGroup;
 			children = (
@@ -232,8 +250,7 @@
 		C8E2DBDA1D1E51C50003384D /* UseCases */ = {
 			isa = PBXGroup;
 			children = (
-				C8E2DBDB1D1E52F00003384D /* FetchTaskListSpec.swift */,
-				C8C510E31D30C01900533EEC /* CreateTaskSpec.swift */,
+				C8C510EA1D3137A400533EEC /* Task */,
 			);
 			name = UseCases;
 			path = Classes;
@@ -242,8 +259,7 @@
 		C8E2DBDD1D1E74210003384D /* Infrastructures */ = {
 			isa = PBXGroup;
 			children = (
-				C8E2DBDE1D1E743D0003384D /* FetchTaskListAPIClientSpec.swift */,
-				C8C510E11D2BFF0E00533EEC /* CreateTaskAPIClientSpec.swift */,
+				C8C510E91D31379D00533EEC /* Task */,
 			);
 			name = Infrastructures;
 			path = Classes;
