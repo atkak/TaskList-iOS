@@ -7,6 +7,8 @@ class TaskDetailViewController: FormViewController {
     
     let createTaskService = CreateTaskService()
     
+    var task: Task?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         

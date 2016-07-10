@@ -28,6 +28,14 @@ class TaskListViewController: UITableViewController {
         return cell
     }
     
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if let identifier = segue.identifier where identifier == "PushToDetailForEdit" {
+            let destinationViewController = segue.destinationViewController as! TaskDetailViewController
+            let index = self.tableView.indexPathForSelectedRow!.row
+            destinationViewController.task = self.tasks![index]
+        }
+    }
+    
     @IBAction func unwindFromDetailViewFor(segue: UIStoryboardSegue) {
         loadTasks()
     }
