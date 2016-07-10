@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
     </dependencies>
     <scenes>
-        <!--Root View Controller-->
+        <!--Task List View Controller-->
         <scene sceneID="XJB-eQ-1NL">
             <objects>
                 <tableViewController id="XWH-ys-vxc" customClass="TaskListViewController" customModule="TaskList_iOS" customModuleProvider="target" sceneMemberID="viewController">
@@ -28,7 +28,7 @@
                             <outlet property="delegate" destination="XWH-ys-vxc" id="Ynr-OP-TUf"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="xKH-qk-8yj">
+                    <navigationItem key="navigationItem" id="xKH-qk-8yj">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="Gu9-DK-3M6">
                             <connections>
                                 <segue destination="m14-b0-8xe" kind="show" id="er3-J3-TyO"/>
