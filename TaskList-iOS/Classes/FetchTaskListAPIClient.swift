@@ -20,7 +20,7 @@ class FetchTaskListAPIClient {
                     }
                     
                     do {
-                        let tasks = try self.decode(jsonObj)
+                        let tasks: [Task] = try decodeArray(jsonObj)
                         promise.success(tasks)
                     } catch let e {
                         promise.failure(.InvalidResponse(e: e, body: jsonObj))
@@ -31,10 +31,6 @@ class FetchTaskListAPIClient {
             }
         
         return promise.future
-    }
-    
-    private func decode(json: AnyObject) throws -> [Task] {
-        return try decodeArray(json)
     }
     
 }
