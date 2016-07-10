@@ -5,7 +5,7 @@ import BrightFutures
 
 class TaskDetailViewController: FormViewController {
     
-    let createTaskService = CreateTaskService()
+    private let createTaskService = CreateTaskService()
     
     var task: Task?
     
