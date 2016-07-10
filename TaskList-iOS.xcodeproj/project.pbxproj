@@ -19,6 +19,10 @@
 		C8C510E21D2BFF0E00533EEC /* CreateTaskAPIClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C510E11D2BFF0E00533EEC /* CreateTaskAPIClientSpec.swift */; };
 		C8C510E41D30C01900533EEC /* CreateTaskSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C510E31D30C01900533EEC /* CreateTaskSpec.swift */; };
 		C8C510EC1D32371C00533EEC /* CompleteTaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C510EB1D32371C00533EEC /* CompleteTaskService.swift */; };
+		C8C510EE1D323E4B00533EEC /* CompleteTaskAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C510ED1D323E4B00533EEC /* CompleteTaskAPIClient.swift */; };
+		C8C510F01D32404500533EEC /* RestTemplate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C510EF1D32404500533EEC /* RestTemplate.swift */; };
+		C8C510F21D3249D900533EEC /* CompleteTaskAPIClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C510F11D3249D900533EEC /* CompleteTaskAPIClientSpec.swift */; };
+		C8C510F41D32608C00533EEC /* CompleteTaskSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C510F31D32608C00533EEC /* CompleteTaskSpec.swift */; };
 		C8E2DBA11D1D76C00003384D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DBA01D1D76C00003384D /* AppDelegate.swift */; };
 		C8E2DBA61D1D76C00003384D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8E2DBA41D1D76C00003384D /* Main.storyboard */; };
 		C8E2DBA81D1D76C00003384D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8E2DBA71D1D76C00003384D /* Assets.xcassets */; };
@@ -61,6 +65,10 @@
 		C8C510E11D2BFF0E00533EEC /* CreateTaskAPIClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskAPIClientSpec.swift; sourceTree = "<group>"; };
 		C8C510E31D30C01900533EEC /* CreateTaskSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskSpec.swift; sourceTree = "<group>"; };
 		C8C510EB1D32371C00533EEC /* CompleteTaskService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteTaskService.swift; sourceTree = "<group>"; };
+		C8C510ED1D323E4B00533EEC /* CompleteTaskAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteTaskAPIClient.swift; sourceTree = "<group>"; };
+		C8C510EF1D32404500533EEC /* RestTemplate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RestTemplate.swift; sourceTree = "<group>"; };
+		C8C510F11D3249D900533EEC /* CompleteTaskAPIClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteTaskAPIClientSpec.swift; sourceTree = "<group>"; };
+		C8C510F31D32608C00533EEC /* CompleteTaskSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteTaskSpec.swift; sourceTree = "<group>"; };
 		C8E2DB9D1D1D76C00003384D /* TaskList-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaskList-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E2DBA01D1D76C00003384D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
 		C8E2DBA51D1D76C00003384D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -142,6 +150,7 @@
 			children = (
 				C8E2DBD81D1D937A0003384D /* FetchTaskListAPIClient.swift */,
 				C8C510D91D2A9E2900533EEC /* CreateTaskAPIClient.swift */,
+				C8C510ED1D323E4B00533EEC /* CompleteTaskAPIClient.swift */,
 			);
 			name = Task;
 			sourceTree = "<group>";
@@ -151,6 +160,7 @@
 			children = (
 				C8E2DBDE1D1E743D0003384D /* FetchTaskListAPIClientSpec.swift */,
 				C8C510E11D2BFF0E00533EEC /* CreateTaskAPIClientSpec.swift */,
+				C8C510F11D3249D900533EEC /* CompleteTaskAPIClientSpec.swift */,
 			);
 			name = Task;
 			sourceTree = "<group>";
@@ -160,6 +170,7 @@
 			children = (
 				C8E2DBDB1D1E52F00003384D /* FetchTaskListSpec.swift */,
 				C8C510E31D30C01900533EEC /* CreateTaskSpec.swift */,
+				C8C510F31D32608C00533EEC /* CompleteTaskSpec.swift */,
 			);
 			name = Task;
 			sourceTree = "<group>";
@@ -245,6 +256,7 @@
 				C8C510CD1D293FFA00533EEC /* AppConfiguration.swift */,
 				C8C510DB1D2A9F1D00533EEC /* APIClientError.swift */,
 				C8C510DF1D2AB03300533EEC /* DateFormatter.swift */,
+				C8C510EF1D32404500533EEC /* RestTemplate.swift */,
 			);
 			name = Infrastructures;
 			path = Classes;
@@ -488,7 +500,9 @@
 				C8C510D81D29569C00533EEC /* CreateTaskService.swift in Sources */,
 				C8C510E01D2AB03300533EEC /* DateFormatter.swift in Sources */,
 				C8E2DBD61D1D89C50003384D /* Task.swift in Sources */,
+				C8C510F01D32404500533EEC /* RestTemplate.swift in Sources */,
 				C8C510EC1D32371C00533EEC /* CompleteTaskService.swift in Sources */,
+				C8C510EE1D323E4B00533EEC /* CompleteTaskAPIClient.swift in Sources */,
 				C8E2DBA11D1D76C00003384D /* AppDelegate.swift in Sources */,
 				C8E2DBD31D1D89470003384D /* FetchTaskListService.swift in Sources */,
 				C8C510DA1D2A9E2900533EEC /* CreateTaskAPIClient.swift in Sources */,
@@ -504,7 +518,9 @@
 			files = (
 				C8E2DBDF1D1E743D0003384D /* FetchTaskListAPIClientSpec.swift in Sources */,
 				C8C510E41D30C01900533EEC /* CreateTaskSpec.swift in Sources */,
+				C8C510F41D32608C00533EEC /* CompleteTaskSpec.swift in Sources */,
 				C8E2DBDC1D1E52F00003384D /* FetchTaskListSpec.swift in Sources */,
+				C8C510F21D3249D900533EEC /* CompleteTaskAPIClientSpec.swift in Sources */,
 				C8C510E21D2BFF0E00533EEC /* CreateTaskAPIClientSpec.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
