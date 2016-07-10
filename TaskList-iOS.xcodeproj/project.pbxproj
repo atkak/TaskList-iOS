@@ -18,6 +18,7 @@
 		C8C510E01D2AB03300533EEC /* DateFormatter.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C510DF1D2AB03300533EEC /* DateFormatter.swift */; };
 		C8C510E21D2BFF0E00533EEC /* CreateTaskAPIClientSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C510E11D2BFF0E00533EEC /* CreateTaskAPIClientSpec.swift */; };
 		C8C510E41D30C01900533EEC /* CreateTaskSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C510E31D30C01900533EEC /* CreateTaskSpec.swift */; };
+		C8C510EC1D32371C00533EEC /* CompleteTaskService.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8C510EB1D32371C00533EEC /* CompleteTaskService.swift */; };
 		C8E2DBA11D1D76C00003384D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8E2DBA01D1D76C00003384D /* AppDelegate.swift */; };
 		C8E2DBA61D1D76C00003384D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8E2DBA41D1D76C00003384D /* Main.storyboard */; };
 		C8E2DBA81D1D76C00003384D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8E2DBA71D1D76C00003384D /* Assets.xcassets */; };
@@ -59,6 +60,7 @@
 		C8C510DF1D2AB03300533EEC /* DateFormatter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DateFormatter.swift; sourceTree = "<group>"; };
 		C8C510E11D2BFF0E00533EEC /* CreateTaskAPIClientSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskAPIClientSpec.swift; sourceTree = "<group>"; };
 		C8C510E31D30C01900533EEC /* CreateTaskSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateTaskSpec.swift; sourceTree = "<group>"; };
+		C8C510EB1D32371C00533EEC /* CompleteTaskService.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteTaskService.swift; sourceTree = "<group>"; };
 		C8E2DB9D1D1D76C00003384D /* TaskList-iOS.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "TaskList-iOS.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8E2DBA01D1D76C00003384D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = Classes/AppDelegate.swift; sourceTree = "<group>"; };
 		C8E2DBA51D1D76C00003384D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			children = (
 				C8E2DBD21D1D89470003384D /* FetchTaskListService.swift */,
 				C8C510D71D29569C00533EEC /* CreateTaskService.swift */,
+				C8C510EB1D32371C00533EEC /* CompleteTaskService.swift */,
 			);
 			name = Task;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				C8C510D81D29569C00533EEC /* CreateTaskService.swift in Sources */,
 				C8C510E01D2AB03300533EEC /* DateFormatter.swift in Sources */,
 				C8E2DBD61D1D89C50003384D /* Task.swift in Sources */,
+				C8C510EC1D32371C00533EEC /* CompleteTaskService.swift in Sources */,
 				C8E2DBA11D1D76C00003384D /* AppDelegate.swift in Sources */,
 				C8E2DBD31D1D89470003384D /* FetchTaskListService.swift in Sources */,
 				C8C510DA1D2A9E2900533EEC /* CreateTaskAPIClient.swift in Sources */,
