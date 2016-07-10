@@ -1,36 +1,15 @@
 import Foundation
 import BrightFutures
-import Alamofire
 import Himotoki
 
 class FetchTaskListAPIClient {
     
+    private let restTemplate = RestTemplate()
+    
     func findAll() -> Future<[Task], APIClientError> {
-        let baseURL = AppConfiguration.webAPIBaseURL
-        let promise = Promise<[Task], APIClientError>()
-        
-        Alamofire.request(.GET, "\(baseURL)/tasks")
-            .responseJSON { response in
-                switch response.result {
-                case .Success(let jsonObj):
-                    if let statusCode = response.response?.statusCode where statusCode >= 300 {
-                        let errorMessage = (jsonObj as? [String: String])?["errorMessage"]
-                        promise.failure(.ErrorResponse(statusCode: statusCode, message: errorMessage))
-                        return
-                    }
-                    
-                    do {
-                        let tasks: [Task] = try decodeArray(jsonObj)
-                        promise.success(tasks)
-                    } catch let e {
-                        promise.failure(.InvalidResponse(e: e, body: jsonObj))
-                    }
-                case .Failure(let error):
-                    promise.failure(.RequestFailed(e: error))
-                }
-            }
-        
-        return promise.future
+        return self.restTemplate.get("/tasks", params: nil) { jsonObj in
+            return try decodeArray(jsonObj)
+        }
     }
     
 }

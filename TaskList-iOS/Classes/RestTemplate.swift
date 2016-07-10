@@ -1,11 +1,29 @@
 import Foundation
 import Alamofire
 import BrightFutures
-import Himotoki
 
 class RestTemplate {
     
+    func get<T>(
+        path: String,
+        params: [String: AnyObject]?,
+        responseBodyParser: AnyObject throws -> T
+        ) -> Future<T, APIClientError> {
+        
+        return self.send(.GET, path: path, params: params, responseBodyParser: responseBodyParser)
+    }
+    
     func post<T>(
+        path: String,
+        params: [String: AnyObject]?,
+        responseBodyParser: AnyObject throws -> T
+        ) -> Future<T, APIClientError> {
+        
+        return self.send(.POST, path: path, params: params, responseBodyParser: responseBodyParser)
+    }
+    
+    private func send<T>(
+        method: Alamofire.Method,
         path: String,
         params: [String: AnyObject]?,
         responseBodyParser: AnyObject throws -> T
@@ -14,9 +32,9 @@ class RestTemplate {
         let baseURL = AppConfiguration.webAPIBaseURL
         let promise = Promise<T, APIClientError>()
         
-        Alamofire.request(.POST, "\(baseURL)\(path)", parameters: params, encoding: .JSON)
+        Alamofire.request(method, "\(baseURL)\(path)", parameters: params, encoding: .JSON)
             .response { request, response, data, error in
-                if let statusCode = response?.statusCode where statusCode < 300 && data?.length == 0 {
+                if let statusCode = response?.statusCode where method != .GET && statusCode < 300 && data?.length == 0 {
                     do {
                         let result: T = try responseBodyParser(data!)
                         promise.success(result)
