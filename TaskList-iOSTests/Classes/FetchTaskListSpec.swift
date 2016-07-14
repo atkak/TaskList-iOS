@@ -16,9 +16,9 @@ class FetchTaskListSpec: QuickSpec {
             
             beforeEach {
                 let body = [
-                    ["id": "id1", "title": "title1", "description": "description1", "dueDate": "2016-06-25T15:00:00"],
-                    ["id": "id2", "title": "title2", "description": "description2", "dueDate": "2016-06-25T15:00:01"],
-                    ["id": "id3", "title": "title3", "description": "description3", "dueDate": "2016-06-25T15:00:02"],
+                    ["id": "id1", "title": "title1", "description": "description1", "dueDate": "2016-07-14T15:00:00", "completed": true],
+                    ["id": "id2", "title": "title2", "description": "description2", "dueDate": "2016-07-14T15:00:01", "completed": false],
+                    ["id": "id3", "title": "title3", "description": "description3", "dueDate": "2016-07-14T15:00:02", "completed": true],
                 ]
                 self.stub(http(.GET, uri: "/tasks"), builder: json(body))
             }

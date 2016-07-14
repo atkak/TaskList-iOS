@@ -23,7 +23,10 @@ class TaskListViewController: UITableViewController {
     
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = self.tableView.dequeueReusableCellWithIdentifier("CellIdentifier", forIndexPath: indexPath)
-        cell.textLabel?.text = self.tasks?[indexPath.row].title
+        if let task = self.tasks?[indexPath.row] {
+            cell.textLabel?.text = task.title
+            cell.accessoryType = task.completed ? .Checkmark : .None
+        }
         
         return cell
     }

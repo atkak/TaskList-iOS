@@ -29,7 +29,8 @@ extension Task: Decodable {
             id: e <| "id",
             title: e <| "title",
             description: e <|? "description",
-            dueDate: try DateTransformer.apply(e <| "dueDate")
+            dueDate: try DateTransformer.apply(e <| "dueDate"),
+            completed: e <| "completed"
         )
     }
     

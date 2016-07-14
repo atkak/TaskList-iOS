@@ -16,9 +16,9 @@ class FetchTaskListAPIClientSpec: QuickSpec {
             
                 let apiClient = FetchTaskListAPIClient()
                 let body = [
-                    ["id": "id1", "title": "title1", "description": "description1", "dueDate": "2016-06-25T15:00:00"],
-                    ["id": "id2", "title": "title2", "description": "description2", "dueDate": "2016-06-25T15:00:01"],
-                    ["id": "id3", "title": "title3", "description": "description3", "dueDate": "2016-06-25T15:00:02"],
+                    ["id": "id1", "title": "title1", "description": "description1", "dueDate": "2016-07-14T15:00:00", "completed": true],
+                    ["id": "id2", "title": "title2", "description": "description2", "dueDate": "2016-07-14T15:00:01", "completed": false],
+                    ["id": "id3", "title": "title3", "description": "description3", "dueDate": "2016-07-14T15:00:02", "completed": true],
                     ]
                 
                 beforeEach {
@@ -36,9 +36,10 @@ class FetchTaskListAPIClientSpec: QuickSpec {
                     expect(tasks?[0].id).toEventually(equal("id1"))
                     expect(tasks?[0].title).toEventually(equal("title1"))
                     expect(tasks?[0].description).toEventually(equal("description1"))
+                    expect(tasks?[0].completed).toEventually(beTrue())
                     
                     let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
-                    let date = calendar.dateWithEra(1, year: 2016, month: 6, day: 25, hour: 15, minute: 0, second: 0, nanosecond: 0)
+                    let date = calendar.dateWithEra(1, year: 2016, month: 7, day: 14, hour: 15, minute: 0, second: 0, nanosecond: 0)
                     
                     expect(tasks?[0].dueDate).toEventually(equal(date))
                 }
@@ -49,7 +50,7 @@ class FetchTaskListAPIClientSpec: QuickSpec {
             
                 let apiClient = FetchTaskListAPIClient()
                 let body = [
-                    ["id": "id1", "title": "title1", "dueDate": "2016-06-25T15:00:00"],
+                    ["id": "id1", "title": "title1", "dueDate": "2016-06-25T15:00:00", "completed": true],
                     ]
                 
                 beforeEach {
@@ -66,6 +67,7 @@ class FetchTaskListAPIClientSpec: QuickSpec {
                     expect(tasks?[0].id).toEventually(equal("id1"))
                     expect(tasks?[0].title).toEventually(equal("title1"))
                     expect(tasks?[0].description).toEventually(beNil())
+                    expect(tasks?[0].completed).toEventually(beTrue())
                     
                     let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)!
                     let date = calendar.dateWithEra(1, year: 2016, month: 6, day: 25, hour: 15, minute: 0, second: 0, nanosecond: 0)

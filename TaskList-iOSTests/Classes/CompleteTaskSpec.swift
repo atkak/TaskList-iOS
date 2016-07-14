@@ -17,7 +17,7 @@ class CompleteTaskSpec: QuickSpec {
             let calendar = NSCalendar(identifier: NSCalendarIdentifierGregorian)
             let dueDate = calendar?.dateWithEra(-1, year: 2016, month: 7, day: 5, hour: 23, minute: 0, second: 0, nanosecond: 0)!
             
-            let task = Task(id: "testId", title: "testTitle", description: "testDescription", dueDate: dueDate!)
+            let task = Task(id: "testId", title: "testTitle", description: "testDescription", dueDate: dueDate!, completed: true)
             
             context("when operation suceeded") {
                 

@@ -6,5 +6,6 @@ struct Task {
     let title: String
     let description: String?
     let dueDate: NSDate
+    let completed: Bool
     
 }
