@@ -12,7 +12,7 @@ $ open TaskList-iOS.xcworkspace
 ## Schemas
 
 - TaskList-iOS
-  - using Web API at local (localhost:9000)
+  - using Web API at local (http://localhost:9000)
 
 - TaskList-iOS-dev
-  - using Web API at remote host (tasklist-webapi-dev.ap-northeast-1.elasticbeanstalk.com)
+  - using Web API at remote host (http://tasklist-webapi-dev.ap-northeast-1.elasticbeanstalk.com)
