@@ -31,16 +31,19 @@ class TaskDetailViewController: FormViewController {
                 $0.title = "Title"
                 $0.tag = "title"
                 $0.value = task?.title
+                $0.disabled = self.editState ? true : false
             }
             <<< TextRow() {
                 $0.title = "Description"
                 $0.tag = "description"
                 $0.value = task?.description
+                $0.disabled = self.editState ? true : false
             }
             <<< DateTimeInlineRow {
                 $0.title = "Due Date"
                 $0.tag = "dueDate"
                 $0.value = task?.dueDate
+                $0.disabled = self.editState ? true : false
             }
             +++ Section()
             <<< ButtonRow() {
@@ -54,7 +57,7 @@ class TaskDetailViewController: FormViewController {
             <<< ButtonRow() {
                 $0.title = "Complete"
                 $0.tag = "completeButton"
-                $0.hidden = self.createState ? true : false
+                $0.hidden = (self.createState || (self.task != nil && task!.completed)) ? true : false
             }.onCellSelection(self.completeButtonDidTouch)
     }
     
