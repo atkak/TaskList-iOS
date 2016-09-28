@@ -1,15 +1,20 @@
 import Foundation
-import BrightFutures
+import RxSwift
 
 class CompleteTaskService {
     
     private let completeTaskAPIClient = CompleteTaskAPIClient()
     
-    func complete(task: Task) -> Future<Void, ApplicationError> {
+    func complete(task: Task) -> Observable<Void> {
         return completeTaskAPIClient
             .complete(task.id)
-            .asVoid()
-            .mapError { $0.translateToApplicationError() }
+            .catchError { error in
+                if let error = error as? APIClientError {
+                    throw error.translateToApplicationError()
+                } else {
+                    throw error
+                }
+            }
     }
     
 }

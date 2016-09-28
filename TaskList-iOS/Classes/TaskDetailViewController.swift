@@ -1,12 +1,14 @@
 import UIKit
 import Eureka
 import PKHUD
-import BrightFutures
+import RxSwift
 
 class TaskDetailViewController: FormViewController {
     
     private let createTaskService = CreateTaskService()
     private let completeTaskService = CompleteTaskService()
+    
+    private let disposeBag = DisposeBag()
     
     var task: Task?
     
@@ -110,22 +112,30 @@ class TaskDetailViewController: FormViewController {
     }
     
     private func executeRemoteTask<T>(
-        @autoclosure executor: () -> Future<T, ApplicationError>,
+        @autoclosure executor: () -> Observable<T>,
                      resultHandler: T -> Void
         ) {
         HUD.show(.Progress)
         
         executor()
-            .onSuccess(Queue.main.context) { result in
+            .observeOn(MainScheduler.instance)
+            .subscribe { [unowned self] in
+                switch $0 {
+                case let .Next(result):
                 HUD.flash(.Success, delay: 1.0)
                 resultHandler(result)
-            }
-            .onFailure(Queue.main.context) { error in
+                    
+                case let .Error(error):
                 HUD.hide(animated: false)
-                let alert = UIAlertController(title: nil, message: error.message, preferredStyle: .Alert)
+                let message = (error as? ApplicationError)?.message ?? "Unknown error"
+                let alert = UIAlertController(title: nil, message: message, preferredStyle: .Alert)
                 alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
                 self.presentViewController(alert, animated: true, completion: nil)
+                    
+                case .Completed: break
+                }
             }
+            .addDisposableTo(disposeBag)
     }
     
 }

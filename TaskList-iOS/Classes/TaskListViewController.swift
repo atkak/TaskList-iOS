@@ -1,5 +1,4 @@
 import UIKit
-import BrightFutures
 import RxSwift
 import RxCocoa
 
@@ -58,6 +57,8 @@ class TaskListPresenter {
     
     private (set) var selectedTask: Task? = nil
     
+    private let disposeBag = DisposeBag()
+    
     init() {
         taskStream = tasks.asDriver()
         alertEventStream = alertEvent.asDriver().filter { $0 != nil }
@@ -78,14 +79,20 @@ class TaskListPresenter {
     }
     
     func loadTasks() {
-        let future = fetchTaskListService.findAll()
-        future
-            .onSuccess(Queue.main.context) { [unowned self] in
-                self.tasks.value = $0
-            }
-            .onFailure(Queue.main.context) { [unowned self] _ in
+        fetchTaskListService.findAll()
+            .observeOn(MainScheduler.instance)
+            .subscribe { [unowned self] in
+                switch $0 {
+                case let .Next(tasks):
+                self.tasks.value = tasks
+                    
+                case .Error(_):
                 self.alertEvent.value = AlertEvent(message: "Fail to load tasks")
+                    
+                case .Completed: break
+                }
             }
+            .addDisposableTo(disposeBag)
     }
 }
 

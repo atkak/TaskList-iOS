@@ -1,12 +1,12 @@
 import Foundation
-import BrightFutures
 import Himotoki
+import RxSwift
 
 class CreateTaskAPIClient {
     
     private let restTemplate = RestTemplate()
     
-    func create(task: CreateTask) -> Future<String, APIClientError> {
+    func create(task: CreateTask) -> Observable<String> {
         let dueDateString = DateFormatter.dueDateFormatter.stringFromDate(task.dueDate)
         
         var params: [String: AnyObject] = ["title": task.title, "dueDate": dueDateString]

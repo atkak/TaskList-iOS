@@ -1,12 +1,20 @@
 import Foundation
-import BrightFutures
+import RxSwift
 
 class CreateTaskService {
     
     private let createTaskAPIClient = CreateTaskAPIClient()
     
-    func create(task: CreateTask) -> Future<Void, ApplicationError> {
-        return createTaskAPIClient.create(task).asVoid().mapError { $0.translateToApplicationError() }
+    func create(task: CreateTask) -> Observable<Void> {
+        return createTaskAPIClient.create(task)
+            .map { _ in () }
+            .catchError { error in
+                if let error = error as? APIClientError {
+                    throw error.translateToApplicationError()
+                } else {
+                    throw error
+                }
+            }
     }
     
 }

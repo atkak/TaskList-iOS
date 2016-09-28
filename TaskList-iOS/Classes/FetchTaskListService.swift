@@ -1,11 +1,11 @@
 import Foundation
-import BrightFutures
+import RxSwift
 
 class FetchTaskListService {
     
     private let fetchTaskListAPIClient = FetchTaskListAPIClient()
     
-    func findAll() -> Future<[Task], APIClientError> {
+    func findAll() -> Observable<[Task]> {
         return fetchTaskListAPIClient.findAll()
     }
     

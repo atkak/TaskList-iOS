@@ -1,11 +1,11 @@
 import Foundation
-import BrightFutures
+import RxSwift
 
 class CompleteTaskAPIClient {
     
     private let restTemplate = RestTemplate()
     
-    func complete(id: String) -> Future<Void, APIClientError> {
+    func complete(id: String) -> Observable<Void> {
         let path = buildPath(id)
         
         return restTemplate.post(path, params: nil) { _ in () }

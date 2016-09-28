@@ -1,12 +1,12 @@
 import Foundation
-import BrightFutures
 import Himotoki
+import RxSwift
 
 class FetchTaskListAPIClient {
     
     private let restTemplate = RestTemplate()
     
-    func findAll() -> Future<[Task], APIClientError> {
+    func findAll() -> Observable<[Task]> {
         return self.restTemplate.get("/tasks", params: nil) { jsonObj in
             return try decodeArray(jsonObj)
         }
