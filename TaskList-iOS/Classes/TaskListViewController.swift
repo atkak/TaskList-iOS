@@ -32,7 +32,7 @@ class TaskListViewController: UIViewController {
             .bindTo(presenter.onSelected)
             .addDisposableTo(disposeBag)
         
-        self.presenter.loadTasks()
+        self.presenter.onRefreshTaskList.on(Event.Next(()))
     }
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
@@ -43,13 +43,13 @@ class TaskListViewController: UIViewController {
     }
     
     @IBAction func unwindFromDetailViewFor(segue: UIStoryboardSegue) {
-        self.presenter.loadTasks()
+        self.presenter.onRefreshTaskList.on(Event.Next(()))
     }
     
 }
 
-class TaskListPresenter {
-    private let fetchTaskListService = FetchTaskListService()
+class TaskListPresenter: TaskListViewOutputPort {
+    private let fetchTaskListService: FetchTaskListService
     
     private let tasks = Variable<[Task]>([])
     
@@ -59,14 +59,29 @@ class TaskListPresenter {
     
     private let disposeBag = DisposeBag()
     
+    var observer: AnyObserver<TaskListViewOutputPortEvent> {
+        return AnyObserver { event in
+            switch event {
+            case .Next(.RefreshTaskListComplete(let tasks)):
+                self.tasks.value = tasks
+            default: break
+            }
+        }
+    }
+    
     init() {
         taskStream = tasks.asDriver()
         alertEventStream = alertEvent.asDriver().filter { $0 != nil }
+        fetchTaskListService = FetchTaskListService(outputPort: self)
     }
     
     let taskStream: Driver<[Task]>
     
     let alertEventStream: Driver<AlertEvent!>
+    
+    var onSelected: AnyObserver<Int> {
+        return AnyObserver(eventHandler: bindSelectedTask)
+    }
     
     private func bindSelectedTask(event: Event<Int>) {
         if case let .Next(index) = event {
@@ -74,25 +89,42 @@ class TaskListPresenter {
         }
     }
     
-    var onSelected: AnyObserver<Int> {
-        return AnyObserver(eventHandler: bindSelectedTask)
+    var onRefreshTaskList: AnyObserver<Void> {
+        return AnyObserver { _ in
+            self.loadTasks()
+        }
     }
     
-    func loadTasks() {
-        fetchTaskListService.findAll()
-            .observeOn(MainScheduler.instance)
-            .subscribe { [unowned self] in
-                switch $0 {
-                case let .Next(tasks):
+    private var onRefreshTaskListComplete: AnyObserver<[Task]> {
+        return AnyObserver { event in
+            switch event {
+            case let .Next(tasks):
                 self.tasks.value = tasks
-                    
-                case .Error(_):
+                
+            case .Error(_):
                 self.alertEvent.value = AlertEvent(message: "Fail to load tasks")
-                    
-                case .Completed: break
-                }
+                
+            case .Completed: break
             }
-            .addDisposableTo(disposeBag)
+        }
+    }
+    
+    private func loadTasks() {
+        fetchTaskListService.findAll()
+//            .observeOn(MainScheduler.instance)
+//            .bindTo(onRefreshTaskListComplete)
+//            .subscribe { [unowned self] in
+//                switch $0 {
+//                case let .Next(tasks):
+//                self.tasks.value = tasks
+//                    
+//                case .Error(_):
+//                self.alertEvent.value = AlertEvent(message: "Fail to load tasks")
+//                    
+//                case .Completed: break
+//                }
+//            }
+//            .addDisposableTo(disposeBag)
     }
 }
 
